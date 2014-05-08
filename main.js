@@ -72,7 +72,20 @@ console.log(10 >= 10); // is greater than or equal to
 console.log(10 <= 10); // is less than or equal to
 
 // If/Else Statements
+if (fuenf=5) {
+	alert("Congratulations, you just learned the German word for five!"); // fuenf equals five, so you will see the alert
+}
+else {
+	alert("Nope, five isn't smaller than four. Sucker."); // fuenf will never not equal five, so you'll never see this alert
+}
+
+if (fuenf<6) {
+	prompt("Yep, five is still less than six. If you'd like to type in a box that will do nothing, go right ahead!")
+}
+
 // Methods
+
+
 // Functions
 function dogAge (tad, joe, whitney, lance, luke, william) {
 	return tad - joe - whitney - lance - luke + william;
