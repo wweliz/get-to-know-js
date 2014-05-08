@@ -84,14 +84,18 @@ if (fuenf<6) {
 }
 
 // Methods
-
-
-// Functions
-function dogAge (tad, joe, whitney, lance, luke, william) {
-	return tad - joe - whitney - lance - luke + william;
+function sisterName (x, y) {
+	return x + y;
 };
 
-// console.log(dogAge(dog.dYear, dog.bYear));
+console.log("I call my little sister", familyMember.name + familyMember.nickname)
 
-// 
+	// a method is simply a function nested inside of an object; unlike with functions, you can call a method without having to use the 
+	// object-dot prefix (objectname.methodname)
+
+// Functions
+function dogAge (x, y) {
+	return x - y;
+};
+	// typing "dogAge(dog.dYear, dog.bYear)" into your console will return the answer 16
 
