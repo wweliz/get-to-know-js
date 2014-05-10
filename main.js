@@ -1,101 +1,92 @@
-// Variables
-var dog = {
-	name: "Sealie",
-	nickname: "Seal Puppy",
-	breed: "Labrador Retriever",
-	color: "chocolate",
-	bYear: 1998,
-	dYear: 2014,
-	treat: "bones"
+var citydata = [
+	
+	{	
+			name: "Berlin",		// city name
+			rank: 1,			// rank based on city population
+			popu: 3460725,		// population within city administrative boundaries
+			dens: 3899,			// population density per sq km
+			blnd: "Berlin",		// Bundesland ("state")
+			id: "BER"
+		},
+	
+	{
+		name: "Hamburg",
+		rank: 2,
+		popu: 1786448,
+		dens: 2366,
+		blnd: "Hamburg",
+		id: "HAM"
+	},
+
+	{
+		name: "Munich",
+		rank: 3,
+		popu: 1353186,
+		dens: 4355,
+		blnd: "Baa",
+		id: "MUC"
+  },
+
+	{
+		name: "Cologne",
+		rank: 4,
+		popu: 1007119,
+		dens: 2486,
+		blnd: "North Rhine-Westphalia",
+		id: "KLN"
+	},
+	
+	{
+			name: "Frankfurt",
+			rank: 5,
+			popu: 679664,
+			dens: 2737,
+			blnd: "Hesse",
+			id: "FRA"
+	}
+]
+
+
+console.log(citydata.map(function(city){ return city.name }))
+	/* returns ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt"] */
+
+console.log(["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt"].map(function(thecityof) {return "The city of " + thecityof;}))
+	/* returns ["The city of Berlin", "The city of Hamburg", "The city of Munich", "The city of Cologne", "The city of Frankfurt"] */
+
+
+console.log(["The city of Berlin", "The city of Hamburg", "The city of Munich", "The city of Cologne", "The city of Frankfurt"].map
+	(function(popof) {return popof + " has a population of ";}))
+	/* returns ["The city of Berlin has a population of ", "The city of Hamburg has a population of ", "The city of Munich has a population of ", 
+	"The city of Cologne has a population of ", "The city of Frankfurt has a population of "] */
+
+console.log(citydata.map(function(crank){ return crank.rank }))
+	/* returns [1, 2, 3, 4, 5] */
+
+console.log([1, 2, 3, 4, 5].map(function(ranknum){return rnum = "is ranked number " + ranknum; }))
+	/* returns ["is ranked number 1", "is ranked number 2", "is ranked number 3", "is ranked number 4", "is ranked number 5"] */
+
+console.log(citydata.map(function(popul){ return popul.popu }))
+	/* returns [3460725, 1786448, 1353186, 1007119, 679664] */
+
+var totalpop =[3460725, 1786448, 1353186, 1007119, 679664];
+
+console.log(totalpop.reduce(function(a, b){return a+b;}))
+	/* returns 8287142 */
+
+var sumP = 8287142
+
+function getavg (t, lgth) {
+	return t / lgth
 }
 
-var referenceToBreed = dog.breed
+console.log(getavg (sumP, totalpop.length))
+	/* returns 1657428.4 */
 
-var familyMember = {
-	name: "Hannah",
-	nickname: "Bean",
-	relation: "sister",
-	bYear: 1990,
-	dYear: null,
-	age: 24
-}
+console.log(citydata.map(function(density){return density.dens}))
+	/* returns [3899, 2366, 4355, 2486, 2737] */
 
-// notdef // will return "notdef is not defined" because notdef is not a named variable
-var nope = null // will return "null" because the vaiable is defined, but has no inherent/assigned value
-var undf // will return "undefined" because the variable is named but not defined
-var obj = {} // will return obj {}
+var totaldens = [3899, 2366, 4355, 2486, 2737]
 
-// Strings
-var stt = "string-text-here" // will return "string-text-here"; a string is just text/numbers, etc. inside a set of matching parentheses
-
-var eins = "one"
-var zwei = "two"
-	// typing "eins+zwei" in console will return "onetwo" because it concatenates (sticks together) the strings
-var drei = "3"
-var vier = "4"
-	// typing "drei+vier" in console will return "34" because it treats the numerals in a string like text instead of like numbers
-var fuenf = 5
-	// typing "fuenf+6" in console will return "11" because it treats fuenf as a number (5 is not in quotation marks, so it's not a string)
-
-// Booleans
-var richtig = true
-var falsch = false
-	// typing "richtig+falsch" in the console will return "1" because the computer understands true to have a value of 1, and false to have 
-	// a value of 0 (binary code)
-
-// Arrays
-var siebenachtneun = [7, 8, 9]
-	// an array is a group of multiple values that can be assigned to a single variable; arrays are indexed (meaning that each of the the 
-	// values occupies a certain numerical position) starting at a count of zero (imagine that every value is preceded by a comma; count the)
-	// commas to determine which position a value occupies)
-
-	// typing "siebenachtneun" in the console will return "[7, 8, 9]"
-	// typing "siebenachtneun[0]" in the console will return "7" because 7 is in the zero position
-
-// Comparison Operators
-console.log(10 + 10); // addition
-console.log(10 - 10); // subtraction
-
-console.log(10 * 10); // multiplication
-console.log(10 / 10); // division
-
-console.log(10 == 10); // is equal to
-console.log(10 != 10); // is not equal to
-
-console.log(10 === 10); // is identical to (values in exact same format -- letters/numerals/string, etc.)
-console.log(10 !== 10); // is not identical to
-
-console.log(10 > 10); // is greater than
-console.log(10 < 10); // is less than
-
-console.log(10 >= 10); // is greater than or equal to
-console.log(10 <= 10); // is less than or equal to
-
-// If/Else Statements
-if (fuenf=5) {
-	alert("Congratulations, you just learned the German word for five!"); // fuenf equals five, so you will see the alert
-}
-else {
-	alert("Nope, five isn't smaller than four. Sucker."); // fuenf will never not equal five, so you'll never see this alert
-}
-
-if (fuenf<6) {
-	prompt("Yep, five is still less than six. If you'd like to type in a box that will do nothing, go right ahead!")
-}
-
-// Methods
-function sisterName (x, y) {
-	return x + y;
-};
-
-console.log("I call my little sister", familyMember.name + familyMember.nickname)
-
-	// a method is simply a function nested inside of an object; unlike with functions, you can call a method without having to use the 
-	// object-dot prefix (objectname.methodname)
-
-// Functions
-function dogAge (x, y) {
-	return x - y;
-};
-	// typing "dogAge(dog.dYear, dog.bYear)" into your console will return the answer 16
+console.log(totaldens.reduce(function(a, b){return a+b;}))
+/* returns */
 
