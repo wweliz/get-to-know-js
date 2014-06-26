@@ -98,6 +98,3 @@ function dogAge (x, y) {
 	return x - y;
 };
 	// typing "dogAge(dog.dYear, dog.bYear)" into your console will return the answer 16
-
-	//Testing
-
